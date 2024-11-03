@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring Services - QuickAid</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #5961b6;
+            color: #333;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            margin: 0;
+        }
+        .nav-links a {
+            color: #8a8ccc;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .btn-login {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-login:hover {
+            background-color: rgba(97, 75, 75, 0.1);
+        }
+        .btn-primary {
+            background-color: #fff;
+            color: #007bff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin: auto;
+        }
+        .btn-primary:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        /* Hero Section */
+        .service-hero {
+            background: url('images/tutoring-hero.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .hero-content .button-container {
+            margin-top: 2rem;
+        }
+        /* Subjects Section */
+        .subjects-section {
+            padding: 2rem;
+            background-color: #fff;
+        }
+        .subjects-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .subject-card {
+            flex: 1 1 calc(25% - 1rem);
+            background: #007bff;
+            color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        /* Booking Section */
+        .booking-section {
+            padding: 4rem 2rem;
+            background-color: #e9ecef;
+            margin-top: 3rem;
+        }
+        .booking-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        /* Tutor Profiles Slider */
+        .profiles-slider {
+            overflow: hidden;
+            position: relative;
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .profile-card {
+            min-width: 100%;
+            padding: 1rem;
+            text-align: center;
+        }
+        /* Leadership Section */
+        .leadership-section {
+            padding: 4rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+        .leadership-grid {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .leader-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .leader-card:hover {
+            transform: translateY(-5px);
+        }
+        .leader-card h3 {
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+        .leader-card .position {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">QuickAid</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html" class="btn btn-login">Login</a></li>
+                <li><a href="signin.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero tutoring-hero">
+            <div class="hero-content fade-in">
+                <h1>Online Tutoring</h1>
+                <p>Learn from expert tutors in any subject, anytime</p>
+                <div class="button-container">
+                    <a href="#book-session" class="btn btn-primary">Book a Session</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="subjects-section fade-in">
+            <h2>Popular Subjects</h2>
+            <div class="subjects-grid">
+                <div class="subject-card">
+                    <h3>Mathematics</h3>
+                    <ul>
+                        <li>Algebra & Calculus</li>
+                        <li>Geometry & Trigonometry</li>
+                    </ul>
+                </div>
+                <div class="subject-card">
+                    <h3>Sciences</h3>
+                    <ul>
+                        <li>Physics & Chemistry</li>
+                        <li>Biology & Life Sciences</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="tutor-profiles">
+            <h2>Featured Tutors</h2>
+            <div class="profiles-slider">
+                <div class="slider-track">
+                    <div class="profile-card">
+                        <h3>Jane Doe</h3>
+                        <p>Mathematics Expert</p>
+                    </div>
+                    <div class="profile-card">
+                        <h3>John Smith</h3>
+                        <p>Science Specialist</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="book-session" class="booking-section">
+            <div class="booking-container">
+                <h2>Book a Tutoring Session</h2>
+                <form id="tutoringForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Select a subject</option>
+                            <option value="mathematics">Mathematics</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="sessionDate">Preferred Date</label>
+                        <input type="date" id="sessionDate" name="sessionDate" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Schedule Session</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="leadership-section fade-in">
+            <div class="container">
+                <h2>Our Leadership Team</h2>
+                <div class="leadership-grid">
+                    <div class="leader-card">
+                        <h3>Borra Bhargav</h3>
+                        <p class="position">Chief Executive Officer (CEO)</p>
+                    </div>
+                    <div class="leader-card">
+                        <h3>Nettem Harish Kumar</h3>
+                        <p class="position">Chief Technology Officer (CTO)</p>
+                    </div>
+                    <div class="leader-card">
+                        <h3>Lakshit Patel</h3>
+                        <p class="position">Chief Financial Officer (CFO)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 QuickAid. All rights reserved.</p>
+    </footer>
+</body>
+</html>

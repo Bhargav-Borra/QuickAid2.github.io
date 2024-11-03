@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Recommendations - QuickAid</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f3f4f6;
+            color: #333;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .btn-login, .btn-primary {
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            color: #fff;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+        }
+        .btn-primary:hover, .btn-login:hover {
+            background-color: #003f7f;
+        }
+        /* Hero Section */
+        .service-hero {
+            background: url('images/product-hero.jpg') center/cover no-repeat;
+            color: #000000;
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .service-hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        /* Categories Section */
+        .categories-section {
+            padding: 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+        .category-grid {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .category-card {
+            flex: 1 1 calc(30% - 1rem);
+            background: #007bff;
+            color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .category-card h3 {
+            margin: 1rem 0;
+        }
+        /* Timeline Section */
+        .how-it-works {
+            background-color: #e9ecef;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .how-it-works h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .process-timeline {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .timeline-item {
+            flex: 1 1 calc(25% - 1rem);
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .timeline-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 1rem;
+        }
+        /* Consultation Form */
+        .consultation-section {
+            padding: 3rem 2rem;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .consultation-box {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        .btn-full {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-full:hover {
+            background-color: #0056b3;
+        }
+        /* Testimonials Section */
+        .testimonials {
+            padding: 3rem 2rem;
+            background-color: #fff;
+            text-align: center;
+        }
+        .testimonial-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .testimonial-card {
+            flex: 1 1 calc(45% - 1rem);
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">QuickAid</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html" class="btn btn-login">Login</a></li>
+                <li><a href="signin.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero product-hero">
+            <div class="hero-content">
+                <h1>Product Recommendations</h1>
+                <p>Get personalized product suggestions from experts who understand your needs</p>
+                <a href="#consultation" class="btn btn-primary">Book a Consultation</a>
+            </div>
+        </section>
+
+        <section class="categories-section">
+            <h2>We Help You Choose</h2>
+            <div class="category-grid">
+                <div class="category-card">
+                    <div class="category-icon tech"></div>
+                    <h3>Technology</h3>
+                    <ul>
+                        <li>Smartphones & Gadgets</li>
+                        <li>Laptops & Computers</li>
+                    </ul>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon lifestyle"></div>
+                    <h3>Lifestyle</h3>
+                    <ul>
+                        <li>Fitness Equipment</li>
+                        <li>Home & Living</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>Our Recommendation Process</h2>
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-number">1</div>
+                    <h3>Share Your Requirements</h3>
+                    <p>Tell us about your needs, preferences, and budget</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-number">2</div>
+                    <h3>Expert Analysis</h3>
+                    <p>Our experts research and compare options based on your criteria</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="consultation" class="consultation-section">
+            <div class="consultation-box">
+                <h2>Book a Consultation</h2>
+                <form id="consultationForm" class="consultation-form">
+                    <div class="form-group">
+                        <label for="category">Product Category</label>
+                        <select id="category" name="category" required>
+                            <option value="">Select a category</option>
+                            <option value="tech">Technology</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-full">Schedule Consultation</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The expert helped me choose the perfect laptop for my design work. Saved me hours of research!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 QuickAid. All rights reserved.</p>
+    </footer>
+</body>
+</html>

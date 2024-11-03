@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickAid - Instant Help from Experts, Anytime, Anywhere</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #218838;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        .btn-secondary {
+            background-color: #ffc107;
+            color: #333;
+        }
+
+        .btn-secondary:hover {
+            background-color: #e0a800;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: #000000;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .hero-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        /* Services Section */
+        .services-grid {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .services-grid h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-cards {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .service-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: calc(25% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .features h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .feature {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: calc(25% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 2rem 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-section {
+            width: calc(33% - 1rem);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">QuickAid</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <!-- <li><a href="pricing.html">Pricing</a></li> -->
+                <li><a href="contact1.html">Contact</a></li>
+                <li><a href="index.html" class="btn btn-login">Login</a></li>
+                <li><a href="signin.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Instant Help from Experts, Anytime, Anywhere</h1>
+            <p class="hero-text">Connect with skilled professionals for immediate assistance across various services</p>
+            <div class="cta-buttons">
+                <a href="#services" class="btn btn-primary">Get Help Now</a>
+                <a href="become-provider.html" class="btn btn-secondary">Join as Provider</a>
+            </div>
+        </section>
+
+        <section id="services" class="services-grid">
+            <h2>Our Services</h2>
+            <div class="service-cards">
+                <div class="service-card">
+                    <i class="icon expert-advice"></i>
+                    <h3>Expert Advice</h3>
+                    <p>Get professional guidance on any topic</p>
+                    <a href="expertadvice.html" class="btn btn-primary">Click Here</a>
+                </div>
+                <div class="service-card">
+                    <i class="icon tech-support"></i>
+                    <h3>Tech Support</h3>
+                    <p>Solve technical issues instantly</p>
+                    <a href="techsupport.html" class="btn btn-primary">Click Here</a>
+                </div>
+                <div class="service-card">
+                    <i class="icon tutoring"></i>
+                    <h3>Tutoring</h3>
+                    <p>Learn from experienced educators</p>
+                    <a href="tutoring.html" class="btn btn-primary">Click Here</a>
+                </div>
+                <div class="service-card">
+                    <i class="icon recommendations"></i>
+                    <h3>Recommand a product</h3>
+                    <p>Find the perfect products for your needs</p>
+                    <a href="recomandaproduct.html" class="btn btn-primary">Click Here</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose QuickAid?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Real-Time Matching</h3>
+                    <p>Connect with experts in minutes</p>
+                </div>
+                <div class="feature">
+                    <h3>Secure Payments</h3>
+                    <p>Safe and reliable transactions</p>
+                </div>
+                <div class="feature">
+                    <h3>Verified Experts</h3>
+                    <p>Qualified professionals you can trust</p>
+                </div>
+                <div class="feature">
+                    <h3>24/7 Availability</h3>
+                    <p>Help whenever you need it</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuickAid</h4>
+                <p>Your go-to platform for immediate expert assistance</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 QuickAid. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>

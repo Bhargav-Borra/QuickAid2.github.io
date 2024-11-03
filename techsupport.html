@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Support - QuickAid</title>
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .service-hero {
+            background: url('images/tech-hero.jpg') no-repeat center center/cover;
+            color: #000000;
+            text-align: center;
+            padding: 4rem 2rem;
+        } 
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+        }
+
+        .support-categories, .service-features, .help-section, .pricing-section {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .support-grid, .features-grid, .pricing-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .support-card, .feature-card, .pricing-card {
+            flex: 1 1 30%;
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .support-card h3, .feature-card h3, .pricing-card h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .service-features .feature-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group select, .form-group textarea, .form-group input {
+            width: 100%;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .pricing-card.featured {
+            border: 2px solid #007bff;
+            background-color: #e9ecef;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #007bff;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">QuickAid</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html" class="btn btn-login">Login</a></li>
+                <li><a href="signin.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero tech-hero">
+            <div class="hero-content">
+                <h1>Tech Support</h1>
+                <p>Get instant solutions for all your technical issues</p>
+                <a href="#get-help" class="btn btn-primary">Get Help Now</a>
+            </div>
+        </section>
+
+        <section class="support-categories">
+            <h2>What We Help With</h2>
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-icon computer"></div>
+                    <h3>Computer Issues</h3>
+                    <ul>
+                        <li>Software Installation</li>
+                        <li>System Optimization</li>
+                        <li>Virus Removal</li>
+                        <li>Data Recovery</li>
+                    </ul>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon network"></div>
+                    <h3>Network Solutions</h3>
+                    <ul>
+                        <li>WiFi Setup & Troubleshooting</li>
+                        <li>Router Configuration</li>
+                        <li>Network Security</li>
+                        <li>VPN Setup</li>
+                    </ul>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-icon mobile"></div>
+                    <h3>Mobile Support</h3>
+                    <ul>
+                        <li>Phone Configuration</li>
+                        <li>App Troubleshooting</li>
+                        <li>Data Transfer</li>
+                        <li>Device Optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="service-features">
+            <h2>Why Choose Our Tech Support?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="feature-icon quick"></i>
+                    <h3>Quick Response</h3>
+                    <p>Connect with a tech expert within minutes</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon expert"></i>
+                    <h3>Expert Solutions</h3>
+                    <p>Certified technicians with years of experience</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon remote"></i>
+                    <h3>Remote Support</h3>
+                    <p>Get help from anywhere, anytime</p>
+                </div>
+                <div class="feature-card">
+                    <i class="feature-icon guarantee"></i>
+                    <h3>Satisfaction Guarantee</h3>
+                    <p>Pay only when your issue is resolved</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-help" class="help-section">
+            <div class="help-container">
+                <h2>Get Technical Support</h2>
+                <form id="techSupportForm" class="support-form">
+                    <div class="form-group">
+                        <label for="issueType">Type of Issue</label>
+                        <select id="issueType" name="issueType" required>
+                            <option value="">Select issue type</option>
+                            <option value="computer">Computer Problem</option>
+                            <option value="network">Network Issue</option>
+                            <option value="mobile">Mobile Device</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="urgency">Urgency Level</label>
+                        <select id="urgency" name="urgency" required>
+                            <option value="low">Not Urgent</option>
+                            <option value="medium">Somewhat Urgent</option>
+                            <option value="high">Very Urgent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Issue Description</label>
+                        <textarea id="description" name="description" rows="4" placeholder="Please describe your technical issue..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferredTime">Preferred Contact Time</label>
+                        <input type="datetime-local" id="preferredTime" name="preferredTime">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Request Support</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="pricing-section">
+            <h2>Simple, Transparent Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Support</h3>
+                    <div class="price">$30<span>/hour</span></div>
+                    <ul>
+                        <li>Basic Troubleshooting</li>
+                        <li>Software Installation</li>
+                        <li>Email Support</li>
+                        <li>Response within 24 hours</li>
+                    </ul>
+                    <button class="btn btn-primary">Choose Plan</button>
+                </div>
+                <div class="pricing-card featured">
+                    <h3>Priority Support</h3>
+                    <div class="price">$50<span>/hour</span></div>
+                    <ul>
+                        <li>Advanced Troubleshooting</li>
+                        <li>Remote Desktop Support</li>
+                        <li>Priority Queue</li>
+                        <li>Response within 1 hour</li>
+                    </ul>
+                    <button class="btn btn-primary">Choose Plan</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Enterprise</h3>
+                    <div class="price">Custom</div>
+                    <ul>
+                        <li>24/7 Dedicated Support</li>
+                        <li>On-site Support Available</li>
+                        <li>Custom Solutions</li>
+                        <li>Immediate Response</li>
+                    </ul>
+                    <button class="btn btn-secondary">Contact Us</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 QuickAid. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/tech-support.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - QuickAid</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        h1, h2, h3 {
+            color: #007bff;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        /* Navigation Styles */
+        header {
+            background-color: #007bff;
+            padding: 1rem;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+        .nav-links .btn {
+            background-color: #fff;
+            color: #007bff;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            border: none;
+        }
+
+        /* Auth Container */
+        .auth-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 64px); /* Full height minus header */
+        }
+        .auth-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .auth-subtitle {
+            margin-bottom: 1.5rem;
+            color: #555;
+        }
+
+        /* Account Type Toggle */
+        .account-type-toggle {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+        .btn-toggle {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #007bff;
+            border-radius: 4px;
+            cursor: pointer;
+            background-color: transparent;
+            color: #007bff;
+            transition: background-color 0.3s;
+            text-align: center; /* Center align text */
+        }
+        .btn-toggle.active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block; /* Block display for proper spacing */
+            margin-bottom: 0.5rem; /* Add space below labels */
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .password-hint {
+            font-size: 0.875rem;
+            color: #888;
+            margin-top: 0.25rem; /* Add space above hint */
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem; /* Add space above the button */
+        }
+
+        /* Social Login Styles */
+        .social-login {
+            text-align: center;
+            margin: 1.5rem 0; /* Add vertical margin */
+        }
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        .btn-social {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-social img {
+            margin-right: 0.5rem;
+        }
+
+        /* Footer Styles */
+        .auth-footer {
+            text-align: center;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">QuickAid</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="index.html" class="btn btn-login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="auth-container">
+        <div class="auth-box signup-box">
+            <h1>Create Account</h1>
+            <p class="auth-subtitle">Join QuickAid to get started</p>
+            
+            <div class="account-type-toggle">
+                <button class="btn btn-toggle active" data-type="client">I need help</button>
+                <button class="btn btn-toggle" data-type="provider">I want to help</button>
+            </div>
+
+            <form class="auth-form" id="signupForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <small class="password-hint">Must be at least 8 characters long</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+
+                <!-- Provider-specific fields (hidden by default) -->
+                <div class="provider-fields" style="display: none;">
+                    <div class="form-group">
+                        <label for="expertise">Areas of Expertise</label>
+                        <select id="expertise" name="expertise" multiple>
+                            <option value="tech">Tech Support</option>
+                            <option value="tutoring">Tutoring</option>
+                            <option value="consulting">Expert Advice</option>
+                            <option value="products">Product Recommendations</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience">Years of Experience</label>
+                        <input type="number" id="experience" name="experience" min="0">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="terms" required>
+                        I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+            </form>
+
+            <div class="social-login">
+                <p>Or sign up with</p>
+                <div class="social-buttons">
+                    <button class="btn btn-social btn-google">
+                        <img src="images/google-icon.svg" alt="Google">
+                        Google
+                    </button>
+                    <button class="btn btn-social btn-facebook">
+                        <img src="images/facebook-icon.svg" alt="Facebook">
+                        Facebook
+                    </button>
+                </div>
+            </div>
+
+            <p class="auth-footer">
+                Already have an account? <a href="index.html">Log in</a>
+            </p>
+        </div>
+    </main>
+
+    <script>
+        // Handle account type toggle
+        const toggleButtons = document.querySelectorAll('.btn-toggle');
+        const providerFields = document.querySelector('.provider-fields');
+        
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                toggleButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                if (this.dataset.type === 'provider') {
+                    providerFields.style.display = 'block';
+                } else {
+                    providerFields.style.display = 'none';
+                }
+            });
+        });
+
+        // Handle the form submission
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Thank you! Your account has been created successfully.');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - QuickAid</title>
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/navigation.css">
+    <link rel="stylesheet" href="/styles/about.css">
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        #navigation-placeholder {
+            margin-bottom: 1rem; /* Adjust as necessary */
+        }
+
+        main {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .about-hero {
+            background: url('/images/about-hero.jpg') no-repeat center center/cover;
+            color: #000000;
+            padding: 4rem 2rem;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+        }
+
+        .mission-section {
+            margin: 2rem 0;
+        }
+
+        .mission-section h2 {
+            font-size: 2rem;
+        }
+
+        .values-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .value-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 30%;
+            max-width: 300px; /* Limiting max width for better layout */
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-section {
+            margin: 2rem 0;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 30%;
+            max-width: 300px; /* Limiting max width for better layout */
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .stats-section {
+            margin: 2rem 0;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 20%;
+            max-width: 200px; /* Limiting max width for better layout */
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #007bff;
+            color: #fff;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body id="about">
+    <div id="navigation-placeholder"></div>
+
+    <main>
+        <section class="about-hero">
+            <div class="hero-content">
+                <h1>About QuickAid</h1>
+                <p>Connecting Expertise with Those Who Need It</p>
+            </div>
+        </section>
+
+        <section class="mission-section">
+            <div class="container">
+                <h2>Our Mission</h2>
+                <p>QuickAid's mission is to make expert assistance accessible to everyone, anytime, anywhere. We believe that connecting people with the right expertise can solve problems faster and create better outcomes for all.</p>
+                
+                <div class="values-grid">
+                    <div class="value-card">
+                        <i class="value-icon accessibility">🔓</i> <!-- Replace with actual icon -->
+                        <h3>Accessibility</h3>
+                        <p>Making expert help available to everyone, regardless of location or time zone</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="value-icon quality">⭐</i> <!-- Replace with actual icon -->
+                        <h3>Quality</h3>
+                        <p>Ensuring high standards through verified experts and continuous quality monitoring</p>
+                    </div>
+                    <div class="value-card">
+                        <i class="value-icon innovation">💡</i> <!-- Replace with actual icon -->
+                        <h3>Innovation</h3>
+                        <p>Leveraging technology to create seamless connections and solutions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Our Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="/images/team/ceo.jpg" alt="Borra Bhargav">
+                        <h3>Borra Bhargav</h3>
+                        <p class="position">Chief Executive Officer (CEO)</p>
+                        <p class="bio">Visionary leader with expertise in business strategy and innovation</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/team/cto.jpg" alt="Nettem Harish Kumar">
+                        <h3>Nettem Harish Kumar</h3>
+                        <p class="position">Chief Technology Officer (CTO)</p>
+                        <p class="bio">Technology expert with deep experience in software development</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="/images/team/cfo.jpg" alt="Lakshit Patel">
+                        <h3>Lakshit Patel</h3>
+                        <p class="position">Chief Financial Officer (CFO)</p>
+                        <p class="bio">Financial strategist with strong background in business operations</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-value="50000">0</div>
+                        <p>Satisfied Clients</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-value="1000">0</div>
+                        <p>Expert Providers</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-value="30">0</div>
+                        <p>Countries Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-value="95">0</div>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 QuickAid. All rights reserved.</p>
+    </footer>
+
+    <script src="/scripts/navigation.js"></script>
+    <script src="/scripts/page-integration.js"></script>
+    <script src="/scripts/about.js"></script>
+</body>
+</html>

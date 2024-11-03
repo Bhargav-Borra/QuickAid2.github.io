@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Advice - QuickAid</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .navbar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1rem;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            transition: background 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .btn-login {
+            background-color: #007bff;
+        }
+
+        .btn-primary {
+            background-color: #28a745;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838;
+        }
+
+        /* Hero Section */
+        .service-hero {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: #000000;
+        }
+
+        .service-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Expertise Section */
+        .expertise-areas {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .expertise-areas h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .expertise-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .expertise-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: calc(25% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .expertise-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #007bff;
+        }
+
+        /* Consultation Section */
+        .consultation-section {
+            padding: 2rem;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .consultation-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .consultation-form .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .consultation-form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .consultation-form input, .consultation-form select, .consultation-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .btn-full {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: #28a745;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-full:hover {
+            background-color: #218838;
+        }
+
+        /* Expert Profiles Section */
+        .expert-profiles {
+            padding: 2rem;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .profiles-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .profile-card {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 8px;
+            width: calc(25% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+
+        .ratings {
+            font-size: 0.9rem;
+            color: #ffc107;
+        }
+
+        /* Success Stories Section */
+        .success-stories {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .stories-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .story-card {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: calc(50% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .story-card blockquote {
+            font-size: 1rem;
+            font-style: italic;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .client-info img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: #f8f9fa;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-section {
+            width: calc(33% - 1rem);
+        }
+
+        .footer-section h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: #f8f9fa;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="home.html" class="logo">QuickAid</a>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="index.html" class="btn btn-login">Login</a></li>
+                <li><a href="signin.html" class="btn btn-primary">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="service-hero expert-hero">
+            <div class="hero-content">
+                <h1>Expert Advice</h1>
+                <p>Professional guidance from industry experts</p>
+                <a href="#consultation" class="btn btn-primary">Book a Consultation</a>
+            </div>
+        </section>
+
+        <section class="expertise-areas">
+            <h2>Areas of Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">📈</div>
+                    <h3>Business Consulting</h3>
+                    <ul>
+                        <li>Strategic Planning</li>
+                        <li>Market Analysis</li>
+                        <li>Business Development</li>
+                        <li>Financial Strategy</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">⚖️</div>
+                    <h3>Legal Consultation</h3>
+                    <ul>
+                        <li>Contract Review</li>
+                        <li>Legal Documentation</li>
+                        <li>Business Law</li>
+                        <li>Intellectual Property</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">💼</div>
+                    <h3>Career Guidance</h3>
+                    <ul>
+                        <li>Resume Building</li>
+                        <li>Interview Preparation</li>
+                        <li>Career Planning</li>
+                        <li>Skill Development</li>
+                    </ul>
+                </div>
+
+                <div class="expertise-card">
+                    <div class="expertise-icon">💵</div>
+                    <h3>Financial Planning</h3>
+                    <ul>
+                        <li>Investment Strategy</li>
+                        <li>Retirement Planning</li>
+                        <li>Tax Consultation</li>
+                        <li>Wealth Management</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="consultation" class="consultation-section">
+            <div class="consultation-box">
+                <h2>Schedule a Consultation</h2>
+                <form id="expertConsultationForm" class="consultation-form">
+                    <div class="form-group">
+                        <label for="expertiseArea">Area of Expertise</label>
+                        <select id="expertiseArea" name="expertiseArea" required>
+                            <option value="">Select area</option>
+                            <option value="business">Business Consulting</option>
+                            <option value="legal">Legal Consultation</option>
+                            <option value="career">Career Guidance</option>
+                            <option value="finance">Financial Planning</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="consultationType">Consultation Type</label>
+                        <select id="consultationType" name="consultationType" required>
+                            <option value="oneTime">One-time Consultation</option>
+                            <option value="ongoing">Ongoing Support</option>
+                            <option value="emergency">Emergency Consultation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="consultationDetails">Tell us about your needs</label>
+                        <textarea id="consultationDetails" name="consultationDetails" rows="4" placeholder="Describe your situation and what you hope to achieve..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredDate">Preferred Date</label>
+                        <input type="date" id="preferredDate" name="preferredDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preferredTime">Preferred Time</label>
+                        <select id="preferredTime" name="preferredTime" required>
+                            <option value="morning">Morning (9AM - 12PM)</option>
+                            <option value="afternoon">Afternoon (1PM - 5PM)</option>
+                            <option value="evening">Evening (6PM - 9PM)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-full">Request Consultation</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="expert-profiles">
+            <h2>Meet Our Experts</h2>
+            <div class="profiles-grid">
+                <div class="profile-card">
+                    <img src="images/expert1.jpg" alt="John Smith">
+                    <h3>John Smith</h3>
+                    <p class="expertise">Business Strategy</p>
+                    <p class="experience">15+ years experience</p>
+                    <div class="ratings">★★★★★</div>
+                </div>
+                <!-- Add more expert profiles -->
+            </div>
+        </section>
+
+        <section class="success-stories">
+            <h2>Success Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <blockquote>
+                        "The business consultation helped me pivot my startup during challenging times. The expert's insights were invaluable."
+                    </blockquote>
+                    <div class="client-info">
+                        <img src="images/client1.jpg" alt="Sarah Johnson">
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Startup Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more success stories -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>QuickAid</h4>
+                <p>Your go-to platform for immediate expert assistance.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 QuickAid. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
